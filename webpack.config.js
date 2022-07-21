@@ -5,7 +5,7 @@ module.exports={
     entry:path.resolve(__dirname,"./src/main.js"),
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].js'
+        filename:'[name].js',
     },
     devServer:{
         port:'3000',
@@ -17,7 +17,7 @@ module.exports={
                 test:/\.js$/,
                 exclude: /node_modules/,
                 loader:'babel-loader',
-                
+
             }
         ]
     },
@@ -29,5 +29,9 @@ module.exports={
             inject: 'body',
             path: path.resolve(__dirname, './index.html'),
         }),
-    ]
+    ],
+    //这个属性解决在ie一直报语法错误的问题
+    // 传递多个目标时使用共同的特性子集
+    // webpack 将生成 web 平台的运行时代码，并且只使用 ES5 相关的特性。
+    target: ['web', 'es5'],
 }
