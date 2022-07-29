@@ -1,4 +1,4 @@
-import {add,minus,getString} from './util/utils.js'
-console.log('[ add ] >', add(1,2))
-console.log('[ minus ] >', minus(5,3))
-getString();
+import {createApp} from 'vue';
+import App from './App.vue';
+import router from './router';
+createApp(App).use(router).mount(document.getElementById('app'));
