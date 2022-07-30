@@ -1,50 +1,27 @@
-// https://eslint.org/docs/user-guide/configuring
-
 module.exports = {
-    root: true,
-    // 采用vue提供的解析器
-    // parser: 'vue-eslint-parser',
-    // 同时存在的解析器
-    parserOptions: {
-        parser: '@babel/eslint-parser',
-        sourceType: 'module'
-    },
     env: {
-        browser: true
+        browser: true,
+        es2021: true
     },
     extends: [
-        // 'airbnb-base', 
-        'plugin:vue/vue3-essential','plugin:vue/recommended'],
-    // required to lint *.vue files
-    plugins: ['vue'],
-    // settings: {
-    //     // 解析import的资源路径，比如alias
-    //     'import/resolver': {
-    //         webpack: {
-    //             config: './build/webpack.base.js'
-    //         }
-    //     }
-    // },
-    // 自定义校验规则
+        'plugin:vue/vue3-essential',
+        'airbnb-base'
+    ],
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+    },
+    plugins: [
+        'vue'
+    ],
     rules: {
-        // eslint-plugin-import插件提供的能力
-        // 'import/extensions': [
-        //     'error',
-        //     'always',
-        //     {
-        //         js: 'never',
-        //         vue: 'never',
-        //         css: 'never',
-        //         less: 'never'
-        //     }
-        // ],
         'no-param-reassign': 'off',
         // 允许在开发环境添加debugger
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         // 允许使用嵌套的三目
         'no-nested-ternary': 'off',
         indent: ['error', 4],
-        'linebreak-style': ['error', 'unix'],
+        // 'linebreak-style': ['error', 'unix'],
         quotes: ['error', 'single'],
         semi: ['error', 'always'],
         'comma-dangle': ['error', 'never'],
@@ -75,6 +52,7 @@ module.exports = {
         //         }
         //     }
         // ],
-        "linebreak-style": [0 ,"error", "windows"]
+        'linebreak-style': [0, 'error', 'windows']
+    
     }
 };
