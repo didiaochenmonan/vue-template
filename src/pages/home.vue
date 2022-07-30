@@ -10,32 +10,33 @@
     </div>
 </template>
 <script>
-import {ref,reactive, computed} from 'vue'
-import { useRouter } from "vue-router";
-import {globalUser} from '@/stores/user'
-export default {
-    name:'home',
-    setup(){
-        const router = useRouter()
-        const num = ref(100)
-        const skip = ()=>{
-            router.push('/about')
-        }
-        const skippinia = ()=>{
-            router.push('/pinia')
-        }
-        let arr = reactive([1,2,3,4,5])
-        const btnAdd=()=>{
-            arr.push(arr.length)
-            console.log('[ arr ] >',arr)
-        }
+import { ref, reactive, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { globalUser } from '@/stores/user';
 
-        //pinia
-        const user = globalUser()
-        const userName = computed(()=>user.userName)
-        return {num,skip,arr,btnAdd,userName,skippinia}
+export default {
+    name: 'home',
+    setup() {
+        const router = useRouter();
+        const num = ref(100);
+        const skip = () => {
+            router.push('/about');
+        };
+        const skippinia = () => {
+            router.push('/pinia');
+        };
+        const arr = reactive([1, 2, 3, 4, 5]);
+        const btnAdd = () => {
+            arr.push(arr.length);
+            console.log('[ arr ] >', arr);
+        };
+
+        // pinia
+        const user = globalUser();
+        const userName = computed(() => user.userName);
+        return { num, skip, arr, btnAdd, userName, skippinia };
     }
-}
+};
 </script>
 <style scoped>
 .title {
