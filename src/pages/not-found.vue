@@ -3,7 +3,7 @@
  * @Email: yanghy5@guahao.com
  * @Date: 2019-09-10 13:31:19
  * @Last Modified by: guoxy
- * @Last Modified time: 2022-07-28 14:31:39
+ * @Last Modified time: 2022-07-31 12:25:27
  * @Description: 404页面
  */
 
@@ -13,6 +13,7 @@
             <h3 class="title">
                 你访问的页面找不到了
             </h3>
+        
             <p class="tip">
                 该服务已过期或者打开的地址有误，你可以检查输入的url地址是否拼写正确或刷新再试，如无法解决请联系管理员需求帮助。
             </p>

@@ -14,7 +14,27 @@ module.exports = {
     plugins: [
         'vue'
     ],
+    settings: {
+        // 解析import的资源路径，比如alias
+        'import/resolver': {
+            webpack: {
+                config: './build/webpack.dev.js'
+            }
+        }
+    },
     rules: {
+        // eslint-plugin-import插件提供的能力
+        'no-restricted-globals': 'off',
+        'import/extensions': [
+            'error',
+            'always',
+            {
+                js: 'never',
+                vue: 'never',
+                css: 'never',
+                less: 'never'
+            }
+        ],
         'no-param-reassign': 'off',
         // 允许在开发环境添加debugger
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -52,7 +72,7 @@ module.exports = {
         //         }
         //     }
         // ],
-        'linebreak-style': [0, 'error', 'windows']
-    
+        'linebreak-style': [0, 'error', 'windows'],
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
     }
 };
