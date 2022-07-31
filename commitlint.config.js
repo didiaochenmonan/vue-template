@@ -1,3 +1,6 @@
+// git commit -m <type>[optional scope]: <description>
+// 提交格式（注意冒号后面有空格）
+
 module.exports = {
     extends: ['@commitlint/config-conventional'],
     rules: {
