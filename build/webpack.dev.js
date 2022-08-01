@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const { DefinePlugin } = require('webpack');
 // const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+
 const { NODE_ENV } = process.env;
 function resolve(dir) {
     return path.join(__dirname, dir);
@@ -24,7 +25,16 @@ module.exports = {
         port: '3000',
         open: true,
         hot: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        proxy: {
+            '/web': {
+                target: 'http://127.0.0.1:4048',
+                pathRewrite: {
+                    '^/web': '/tps-local/web'
+                },
+                changeOrigin: true
+            }
+        }
     },
     module: {
         rules: [
@@ -90,8 +100,10 @@ module.exports = {
             __VUE_PROD_DEVTOOLS__: true
         })
         // new ESLintWebpackPlugin({
-        //     context:resolve('../src'),
-        //     exclude:'node_modules',
+        //     context: resolve('../src'),
+        //     exclude: 'node_modules',
+        //     emitError: false,
+        //     emitWarning: true
         //     // fix:true
         // })
     ],
