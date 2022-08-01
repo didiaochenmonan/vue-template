@@ -73,6 +73,8 @@ module.exports = {
         //     }
         // ],
         'linebreak-style': [0, 'error', 'windows'],
-        'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        // 关闭名称校验
+        'vue/multi-word-component-names': 'off' 
     }
 };
