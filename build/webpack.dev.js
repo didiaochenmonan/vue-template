@@ -4,7 +4,6 @@ const { VueLoaderPlugin } = require('vue-loader');
 const { DefinePlugin } = require('webpack');
 // const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
-const { NODE_ENV } = process.env;
 function resolve(dir) {
     return path.join(__dirname, dir);
 }
@@ -25,6 +24,7 @@ module.exports = {
         port: '3000',
         open: true,
         hot: true,
+        compress: true, // 开启gzig压缩
         historyApiFallback: true,
         proxy: {
             '/web': {
@@ -112,7 +112,7 @@ module.exports = {
     // webpack 将生成 web 平台的运行时代码，并且只使用 ES5 相关的特性。
     target: ['web', 'es5'],
     resolve: {
-        extensions: ['.js', '.json', '.css', '.less', '.vue'],
+        extensions: ['.js', '.json', '.css', '.less', '.vue', 'tsx'],
         alias: {
             '@': resolve('../src'),
             images: resolve('../src/images')

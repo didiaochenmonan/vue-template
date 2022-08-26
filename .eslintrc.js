@@ -4,7 +4,7 @@ module.exports = {
         es2021: true
     },
     extends: [
-        'plugin:vue/vue3-essential',
+        'plugin:vue/vue3-recommended',
         'airbnb-base'
     ],
     parserOptions: {
@@ -62,16 +62,20 @@ module.exports = {
                 multiline: 'never'
             }
         ],
-        // 'vue/max-attributes-per-line': [
-        //     'error',
-        //     {
-        //         singleline: 1,
-        //         multiline: {
-        //             max: 1,
-        //             allowFirstLine: true
-        //         }
-        //     }
-        // ],
+        'vue/max-attributes-per-line': ['error', {
+            singleline: {
+                max: 1
+            },      
+            multiline: {
+                max: 1
+            }
+        }],
+        'vue/first-attribute-linebreak': [2, {
+            // 单行时，第一属性前不允许使用换行符
+            singleline: 'beside',
+            // 多行时，第一属性前必须使用换行符
+            multiline: 'beside'
+        }],
         'linebreak-style': [0, 'error', 'windows'],
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
         // 关闭名称校验

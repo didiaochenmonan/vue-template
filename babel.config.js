@@ -3,18 +3,21 @@ module.exports = {
         [
             '@babel/preset-env',
             {
-                "useBuiltIns": "usage",
+                useBuiltIns: 'usage',
                 // 指定core-js版本
-                "corejs": 3,
+                corejs: 3,
                 // 指定浏览兼容性版本
-                "targets": {
-                    "chrome": "60",
-                    "firefox": "60",
-                    "ie": "9",
-                    "safari": "10",
-                    "edge": "17"
+                targets: {
+                    chrome: '60',
+                    firefox: '60',
+                    ie: '9',
+                    safari: '10',
+                    edge: '17'
                 }
             }
         ]
+    ],
+    plugins: [
+        '@babel/plugin-transform-runtime' // 减少babel转换代码体积
     ]
 };

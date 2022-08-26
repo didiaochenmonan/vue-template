@@ -1,12 +1,31 @@
 <template>
-    <h2>用户名称{{userName}}</h2>
-    <button @click="skip">跳转用户页</button>
-    <button @click="skippinia">跳转pinia</button>
-    <div class="box">{{num}}</div>
-    <button @click="btnAdd">增加</button>
+    <h2>用户名称{{ userName }}</h2>
+    <button @click="skip">
+        跳转用户页
+    </button>
+    <button @click="skippinia">
+        跳转pinia
+    </button>
+    <div class="box">
+        {{ num }}
+    </div>
+    <button key="1"
+            @click="btnAdd">
+        增加
+    </button>
     <!-- <img src="@/images/dTender.png" alt=""> -->
     <div>
-        <div v-for="(item,index) in arr">{{item}},下标{{index}}</div>
+        <div v-for="(item,index) in arr"
+             :key="index">
+            {{ item }},下标{{ index }}
+        </div>
+    </div>
+    <div>
+        <div v-for="(item,index) in arr"
+             :key="index">
+            {{ item }},下标{{ index }}
+        </div>
+        <div>1</div>
     </div>
 </template>
 <script>
@@ -15,7 +34,7 @@ import { useRouter } from 'vue-router';
 import { globalUser } from '@/stores/user';
 
 export default {
-    name: 'home',
+    name: 'Home',
     setup() {
         const router = useRouter();
         const num = ref(100);
