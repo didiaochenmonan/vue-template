@@ -4,6 +4,7 @@ const About = () => import('@/pages/about');
 const Home = () => import('@/pages/home');
 const NotFound = () => import(/* webpackChunkName: "not-found" */ '@/pages/not-found');
 const Pinia = () => import('@/pages/pinia');
+const Hooks = () => import('@/pages/hooks');
 
 export default createRouter({
     history: createWebHistory(),
@@ -44,6 +45,13 @@ export default createRouter({
             component: Pinia,
             meta: {
                 title: 'pinia'
+            }
+        },
+        {
+            path: '/hooks',
+            component: Hooks,
+            meta: {
+                title: 'hooks'
             }
         }
     ]
