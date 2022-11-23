@@ -1,5 +1,5 @@
 <template>
-    <h1>nginx测试</h1>
+    <h1>nginx测试-test</h1>
     <h2>用户名称{{ userName }}</h2>
     <button @click="skip">
         跳转用户页
