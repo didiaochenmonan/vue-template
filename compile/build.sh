@@ -2,7 +2,8 @@
 
 echo "start compile"
 
+cd /www
 ls
 pwd
-cp -r dist.tar.gz /www/html/
+# cp -r dist.tar.gz /www/html/
 # zip -r dist.zip dist/
